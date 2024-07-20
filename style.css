@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div     {
+    box-sizing: border-box;
+}   
+
+.container {
+    width: 608px;
+    height: 608px;
+    margin: 50px;
+    border: solid 2px;
+    box-sizing: content-box;
+}
+
+.row {
+    display: flex;
+}
+
+.square {
+    border: solid 2px;  
+}
