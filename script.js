@@ -19,11 +19,13 @@ function createSquare(row) {
     const square = document.createElement("div");
     square.style.width = `${size / gridSize}px`;
     square.style.height = `${size / gridSize}px`;
+    square.style.opacity = "0";
     square.addEventListener("mouseover", (e) => {
         let red = getRandomRGB();
-        let green = getRandomRGB();
+        let green = getRandomRGB(); 
         let blue = getRandomRGB();
-        e.target.style.backgroundColor = `rgb(${red} ${green} ${blue})`;
+        square.style.opacity = Math.min(parseFloat(square.style.opacity) + 0.1, 1) + "";
+        e.target.style.backgroundColor = `rgb(${red} ${green} ${blue} / ${square.style.opacity})`;
     })
     row.appendChild(square);
 }
