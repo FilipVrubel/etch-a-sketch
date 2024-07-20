@@ -9,10 +9,10 @@ div     {
 }   
 
 .container {
-    width: 608px;
-    height: 608px;
+    width: 640px;
+    height: 640px;
     margin: 50px;
-    border: solid 2px;
+    border: solid 4px;
     box-sizing: content-box;
 }
 
@@ -20,6 +20,3 @@ div     {
     display: flex;
 }
 
-.square {
-    border: solid 2px;  
-}
