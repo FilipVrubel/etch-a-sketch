@@ -7,17 +7,25 @@ function createGrid() {
     for (let i = 0; i < gridSize; i++) {
         const row = document.createElement("div");
         row.classList.toggle("row")
+    
         for (let j = 0; j < gridSize; j++) {
-            const square = document.createElement("div");
-            square.style.width = `${size / gridSize}px`;
-            square.style.height = `${size / gridSize}px`;
-            square.addEventListener("mouseover", (e) => e.target.style.backgroundColor = "red")
-            row.appendChild(square);
-
+            createSquare(row);
         }
-
         container.appendChild(row);
     }
+}
+
+function createSquare(row) {
+    const square = document.createElement("div");
+    square.style.width = `${size / gridSize}px`;
+    square.style.height = `${size / gridSize}px`;
+    square.addEventListener("mouseover", (e) => {
+        let red = getRandomRGB();
+        let green = getRandomRGB();
+        let blue = getRandomRGB();
+        e.target.style.backgroundColor = `rgb(${red} ${green} ${blue})`;
+    })
+    row.appendChild(square);
 }
 
 createGrid();
@@ -29,3 +37,6 @@ button.addEventListener("click", () => {
     } while (gridSize > 100 || gridSize < 0 || Number.isNaN(gridSize));
     createGrid()
 });
+
+let getRandomRGB = () => Math.floor(Math.random() * 256);
+
